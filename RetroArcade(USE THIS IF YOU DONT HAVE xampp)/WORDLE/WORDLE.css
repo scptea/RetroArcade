@@ -1,0 +1,88 @@
+body {
+    font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
+    text-align: center; 
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+}
+
+hr {
+    width: 500px;
+    border-color: #FFFFFF;
+}
+
+#title {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#button1 {
+    position: absolute; /* Set position to absolute */
+    bottom: 10px; /* Adjust the distance from the bottom */
+    left: 10px; /* Adjust the distance from the left */
+    background-color: #673AB7;
+    color: #FFF;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 1em;
+  }
+#board {
+    width: 350px;
+    height: 420px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #1F1F1F;
+    border: 5px solid #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.tile {
+    /* Box */
+    border: 2px solid #787C7E;
+    width: 60px;
+    height: 60px;
+    margin: 2.5px;
+
+    /* Text */
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1F1F1F;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* The `.correct` class is defining the styles for elements with the class "correct". It sets the
+background color to #6AAA64, the text color to #FFFFFF, and the border color to #FFFFFF. This class
+is likely used to visually indicate a certain state or condition for elements on the webpage, such
+as indicating that an element is correct or valid. */
+.correct {
+    background-color: #6AAA64;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+/* The `.present` class is defining the styles for elements with the class "present". It sets the
+background color to #C9B458, the text color to #FFFFFF, and the border color to #FFFFFF. This class
+is likely used to visually indicate a certain state or condition for elements on the webpage. */
+.present {
+    background-color: #C9B458;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+/* The `.absent` class is defining the styles for elements with the class "absent". It sets the
+background color to #787C7E, the text color to #FFFFFF, and the border color to #FFFFFF. This class
+is likely used to visually indicate a certain state or condition for elements on the webpage. */
+.absent {
+    background-color: #787C7E;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}

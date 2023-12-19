@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Press Start 2P', cursive;
+      background-color: #000;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #fff;
+    }
+
+    canvas {
+      border: 2px solid rgb(151, 149, 149);
+      background-color: #211a35;
+      display: block;
+      margin: 20px auto;
+    }
+
+    p {
+      color: #bbb;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      background-color: #8e44ad; /* Light Purple */
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #6c3483; /* Darker Purple on Hover */
+    }
+
+    #score {
+      color: #fff;
+      font-size: 20px;
+      margin-top: 10px;
+    }
+    #button1 {
+      position: absolute; /* Set position to absolute */
+      bottom: 10px; /* Adjust the distance from the bottom */
+      left: 10px; /* Adjust the distance from the left */
+      background-color: #673AB7;
+      color: #FFF;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 25px;
+      font-size: 1em;
+    }
+  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <title>Snake Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>Snake Game</h1>
+  <p>Use arrow keys to control the snake.</p>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <canvas id="stage" height="500" width="600"></canvas>
+  <div id="score">Score: 0</div>
+  <button onclick="startGame()">Start Game</button>
+  <button id="button1" onclick="window.location.href='/Homepage.html'">Exit game</button>
+
+  <!-- Audio elements -->
+  <audio id="eatSound" src="eat.mp3"></audio>
+  <audio id="loseSound" src="lose.mp3"></audio>
+
+  <script src="snake.js"></script>
+</body>
+
+</html>

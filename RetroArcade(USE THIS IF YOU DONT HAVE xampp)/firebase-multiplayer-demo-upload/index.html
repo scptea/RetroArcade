@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <title>Multiplayer Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <button id="button1" onclick="window.location.href='Homepage.html'">Exit game</button>
+
+  </head>
+  </head>
+  <body>
+    
+    <div class="game-container">
+    </div>
+    <div class="player-info">
+      <div>
+        <label for="player-name">Your Name</label>
+        <input id="player-name" maxlength="10" type="text" />
+      </div>
+      <div>
+        <button id="player-color">Change Color</button>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script>
+      // NOTE - INCLUDE YOUR FIREBASE CONFIG HERE FOR ANYTHING TO WORK:
+      const firebaseConfig = {
+      apiKey: "AIzaSyAIhThpNFvd0536f-afLmBQXGK-XZGp1Ek",
+      authDomain: "multiplay-b6ab9.firebaseapp.com",
+      databaseURL: "https://multiplay-b6ab9-default-rtdb.firebaseio.com",
+      projectId: "multiplay-b6ab9",
+      storageBucket: "multiplay-b6ab9.appspot.com",
+      messagingSenderId: "118999827092",
+      appId: "1:118999827092:web:3abcf3d7fab016d633ea81"
+};
+      firebase.initializeApp(firebaseConfig);
+      var myName = prompt("Enter your name");
+      function sendMessage() {
+          // get message
+          var message = document.getElementById("message").value;
+   
+          // save in database
+          firebase.database().ref("messages").push().set({
+              "sender": myName,
+              "message": message
+          });
+   
+          // prevent form from submitting
+          return false;
+      }
+      firebase.database().ref("messages").on("child_added", function (snapshot) {
+          var html = "";
+          // give each message a unique ID
+          html += "<li id='message-" + snapshot.key + "'>";
+          // show delete button if message is sent by me
+          if (snapshot.val().sender == myName) {
+              html += "<button data-id='" + snapshot.key + "' onclick='deleteMessage(this);'>";
+                  html += "Delete";
+              html += "</button>";
+          }
+          html += snapshot.val().sender + ": " + snapshot.val().message;
+          html += "</li>";
+   
+          document.getElementById("messages").innerHTML += html;
+      });
+      function deleteMessage(self) {
+    // get message ID
+    var messageId = self.getAttribute("data-id");
+ 
+    // delete message
+    firebase.database().ref("messages").child(messageId).remove();
+}
+ 
+// attach listener for delete message
+firebase.database().ref("messages").on("child_removed", function (snapshot) {
+    // remove message node
+    document.getElementById("message-" + snapshot.key).innerHTML = "This message has been removed";
+});
+const messagesContainer = document.getElementById("messages");
+messagesContainer.scrollTop = messagesContainer.scrollHeight - messagesContainer.clientHeight;
+    </script>
+    <form onsubmit="return sendMessage();">
+      <input id="message" placeholder="Enter message" autocomplete="off">
+      <input type="submit">
+  </form>
+  <ul id="messages"></ul>
+  
+    <script src="KeyPressListener.js"></script>
+    <script src="app.js"></script>
+    
+  </body>
+</html>

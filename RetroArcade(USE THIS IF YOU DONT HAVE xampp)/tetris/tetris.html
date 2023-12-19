@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html><head></head><body data-new-gr-c-s-check-loaded="14.1145.0" data-gr-ext-installed="">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+
+    <style>
+        body{
+            background-color: rgb(100, 88, 88);
+        }
+        #button1 {
+          position: absolute; /* Set position to absolute */
+          bottom: 10px; /* Adjust the distance from the bottom */
+          left: 10px; /* Adjust the distance from the left */
+          background-color: #673AB7;
+          color: #FFF;
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+          border-radius: 25px;
+          font-size: 1em;
+        }
+        div, #restartButton {
+          background-color: rgb(100, 88, 88); /* Button background color */
+          color: #FFF; /* Button text color */
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+          border-radius: 25px;
+          font-size: small;
+          font-family: 'Press Start 2P', cursive;
+
+        }
+
+    </style>
+    <center>
+    <div id="AllLinesOut">LinesOut: 7</div>
+    <div id="TetrisDIV" style="border-collapse: collapse; border: 1px solid black; width:320px; height:640px; align-items: center; justify-content: center;">
+    <canvas width="320" height="640" id="game" style="background:url('tetrisback.jpg');  background-size: 100%; height: 100% "></canvas>
+    </div>
+    <div id="nextFigureDIV">NextFigure: I</div>
+    <button id="button1" onclick="window.location.href='/Homepage.html'">Exit game</button>
+
+    <hr><div id="restartButton"><button id="restartButton">Restart Game</button></div>
+    </center>
+    <script src="tetris.js"></script>
+    </body>
+    </html>
