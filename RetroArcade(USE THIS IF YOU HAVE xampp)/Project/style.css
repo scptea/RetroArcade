@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
+
+/* The CSS code `body` is targeting the `<body>` element of an HTML document. */
+body {
+  display: flex;
+  background-color: #673AB7; /* Updated background color */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Germania One', sans-serif;
+}
+
+/* The `.container` class is defining the styles for a container element. */
+.container {
+  height: 50vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  overflow:visible;
+  justify-content: center;
+}
+
+/* The `.card-container` class is defining the styles for a container element that holds multiple
+cards. */
+.card-container {
+  display: flex;
+  flex-wrap: nowrap; /* Display cards in a row */
+}
+
+/* The CSS code is defining the styles for a button element. */
+button {
+  background-color: #673AB7; /* Button background color */
+  color: #FFF; /* Button text color */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 1em;
+}
+
+/* The `.card` class is defining the styles for a card element. Here is a breakdown of what each CSS
+property is doing: */
+.card {
+  background-color: #FFF;
+  border: 6px solid black;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px;
+  box-shadow: black 8px 10px ; /* Initial box shadow */
+  user-select: none;
+  transition: box-shadow 0.25s ease-in; /* Add transition for transform */
+  transition: transform 0.25s ease;
+}
+
+/* The CSS code you provided is defining the styles for a card element when it is being hovered over. */
+.card:hover {
+  box-shadow: black 0px 0px 0px; /* No box shadow on hover */
+}
+
+.card:hover, .card:hover h2, .card:hover p, .card:hover button {
+  transform: translateY(8px);
+  transform: translateX(5px);
+}
+
+.card h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #673AB7; /* Title color */
+}
+
+.card p {
+  font-size: 1em;
+  color: #333; /* Description color */
+}
+
+.card button {
+  background-color: #673AB7; /* Button background color */
+  color: #FFF; /* Button text color */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 1em;
+}
+
+.card button:hover {
+  background-color: #512DA8; /* Darker background color on hover */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+/* The CSS code `canvas` is targeting a `<canvas>` element in an HTML document. It is defining the
+styles for the canvas element. */
+
+canvas {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: #673AB7; /* Canvas background color */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
